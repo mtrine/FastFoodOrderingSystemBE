@@ -1,11 +1,12 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const Cart = require('./Cart');
 
 const Users = sequelize.define('Users', {
   name: {
     type: DataTypes.STRING,
     allowNull: true,
-    unique: true,
+    unique: false,
     validate: {
       len: {
         args: [6, 20], // Độ dài tối thiểu là 6 và tối đa là 20 ký tự
@@ -13,6 +14,7 @@ const Users = sequelize.define('Users', {
       }
     }
   },
+  
   phoneNumber: {
     type: DataTypes.STRING,
     allowNull: true,
@@ -22,7 +24,6 @@ const Users = sequelize.define('Users', {
         args: [10, 50], // Độ dài tối thiểu là 10 và tối đa là 50 ký tự
         msg: "Phone number must be between 10 and 50 characters."
       },
-
     }
   },
   password: {
@@ -40,9 +41,13 @@ const Users = sequelize.define('Users', {
     allowNull: true,
     defaultValue: false
   }
-},{
-    timestamps: true 
-}
-);
+}, {
+  timestamps: true 
+});
+
+Users.hasOne(Cart);
+Cart.belongsTo(Users);
+
+sequelize.sync();
 
 module.exports = Users;

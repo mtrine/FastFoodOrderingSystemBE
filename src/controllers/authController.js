@@ -1,6 +1,7 @@
 const Users = require('../models/Users');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Cart = require('../models/Cart');
 
 let refreshTokens = [];
 
@@ -10,27 +11,31 @@ const authController = {
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(req.body.password, salt);
             const user = await Users.findOne({ where: { phoneNumber: req.body.phoneNumber } });
-            if(user){
+            if (user) {
                 return res.status(400).json({ message: "Phone number already exists" });
             }
             const newUser = await Users.create({
-                Name: req.body.Name,
+                name: req.body.name,
                 phoneNumber: req.body.phoneNumber,
                 password: hashedPassword,
-                admin: req.body.admin
+                admin: false
             });
-
+    
+            await Cart.create({
+                UserId: newUser.id
+            });
             res.status(201).json(newUser);
         } catch (err) {
+            console.log(err); // In ra lỗi chi tiết
             res.status(500).json({ message: err.message });
         }
-    },
-    
+    },    
+
     login: async (req, res) => {
         try {
             const user = await Users.findOne({ where: { phoneNumber: req.body.phoneNumber } });
             if (!user) {
-                return res.status(400).json({ message: "Cannot find user" });
+                return res.status(400).json({ message: "Phone number is wrong" });
             }
             const validPass = await bcrypt.compare(req.body.password, user.password);
             if (!validPass) {
@@ -39,17 +44,35 @@ const authController = {
             const accessToken = authController.generateAccessToken(user);
             const refreshToken = authController.generateRefreshToken(user);
             refreshTokens.push(refreshToken);
+            const decodedAccessToken = jwt.decode(accessToken);
+            const expiredTime = decodedAccessToken.exp * 1000;
             const { password, ...other } = user.dataValues;
-            res.status(200).json({ ...other, accessToken, refreshToken });
+            res.status(200).json({ ...other, accessToken, refreshToken, expiredTime });
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
     },
 
     logout: async (req, res) => {
-        const refreshToken = req.body.token;
-        refreshTokens = refreshTokens.filter(token => token !== refreshToken);
-        res.status(200).json({ message: "Logged out" });
+        const { refreshToken } = req.body;
+
+        if (!refreshToken) {
+            return res.status(400).json({ message: "Refresh token is required" });
+        }
+
+        if (!refreshTokens.includes(refreshToken)) {
+            return res.status(400).json({ message: "Refresh token is not valid" });
+        }
+
+        try {
+            // Xóa refresh token khỏi danh sách token hợp lệ
+            refreshTokens = refreshTokens.filter(token => token !== refreshToken);
+
+            res.status(200).json({ message: "Logged out successfully" });
+        } catch (err) {
+            console.error(err); // In ra lỗi chi tiết
+            res.status(500).json({ message: "An error occurred during logout" });
+        }
     },
 
     generateAccessToken: (user) => {
@@ -62,7 +85,7 @@ const authController = {
             expiresIn: "30s"
         });
     },
-    
+
     generateRefreshToken: (user) => {
         return jwt.sign({
             id: user.id,
@@ -75,7 +98,7 @@ const authController = {
     },
 
     refreshToken: async (req, res) => {
-        const refreshToken = req.body.token;
+        const refreshToken = req.body.refreshToken;
         if (!refreshToken) {
             return res.status(400).json({ message: "User not authenticated" });
         }
@@ -94,4 +117,5 @@ const authController = {
         });
     },
 };
+
 module.exports = authController;
