@@ -14,7 +14,7 @@ const CartFood = sequelize.define('CartFood', {
         }
     },
 }, {
-    timestamps: true,
+    timestamps: false,
 });
 
 Cart.belongsToMany(Food, { through: CartFood, foreignKey: 'cartId' });

@@ -6,7 +6,7 @@ const Favorite = sequelize.define('Favorite', {
 
 },
 {
-    timestamps: true,
+    timestamps: false,
 }
 );
 User.belongsToMany(Food, { through: Favorite, foreignKey: 'userId' });

@@ -25,7 +25,7 @@ const Order = sequelize.define('Order', {
     },
 },
 {
-    timestamps: true 
+    timestamps: false
 }
 );
 Order.belongsTo(User);

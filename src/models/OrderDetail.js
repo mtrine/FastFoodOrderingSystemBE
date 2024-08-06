@@ -13,7 +13,7 @@
         },
     },
     {
-        timestamps: true 
+        timestamps: false
     }
     );
     module.exports = OrderDetail;

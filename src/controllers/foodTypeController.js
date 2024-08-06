@@ -15,7 +15,7 @@ const foodTypeController = {
     getAllFoodTypes: async (req, res) => {
         try {
             const foodTypes = await FoodType.findAll(
-                { include: Food }
+                
             );
             res.status(200).json(foodTypes);
         } catch (error) {

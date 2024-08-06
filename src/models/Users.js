@@ -42,7 +42,7 @@ const Users = sequelize.define('Users', {
     defaultValue: false
   }
 }, {
-  timestamps: true 
+  timestamps: false
 });
 
 Users.hasOne(Cart);

@@ -1,0 +1,7 @@
+INSERT INTO FoodTypes ( name, image)
+VALUES
+('Gà rán', 'garan.png'),
+
+INSERT INTO Food (id, name, price, image, FoodTypeId)
+VALUES
+('Gà rán sốt kem', 80000, 'ganransotkem.png', 1),

@@ -28,7 +28,7 @@ const Food = sequelize.define('Food', {
 
 },
 {
-    timestamps: true 
+    timestamps: false 
 }
 );
 Food.belongsTo(FoodType);
