@@ -3,7 +3,7 @@ require('dotenv').config({ path: './src/.env' });
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: 'src/config/fastFoodOrderingSystem', // Đường dẫn tới tệp SQLite của bạn
+  storage: 'src/config/fastFoodOrderingSystem.sqlite', // Đường dẫn tới tệp SQLite của bạn
 });
 
 (async () => {

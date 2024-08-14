@@ -32,5 +32,17 @@ const foodController = {
             res.status(400).json(error);
         }
     },
+    getFoodByFoodType:async(req,res)=>{
+        try {
+            const foodTypeId = req.params.foodTypeId;  // Lấy foodTypeId từ tham số đường dẫn
+            const foods = await Food.findAll({
+                where: { FoodTypeId: foodTypeId },
+                include: FoodType
+            });
+            res.status(200).json(foods);
+        } catch (error) {
+            res.status(400).json(error);
+        }
+    }
 }
 module.exports = foodController;

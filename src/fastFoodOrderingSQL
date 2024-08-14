@@ -1,7 +1,49 @@
 INSERT INTO FoodTypes ( name, image)
 VALUES
-('Gà rán', 'garan.png'),
+('Gà rán', 'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Ffried_chicken.png?alt=media&token=0b511d14-01c3-448f-86e3-53b3e37c6df0'),
+('Mỳ ý','https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Fpasta.png?alt=media&token=c596717a-cea1-4181-bf57-dffa588a0235'),
+('Nước uống','https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Fdrinks.png?alt=media&token=cbbc1124-c5d9-4c5b-b8e3-f200c2461192'),
+('Burger','https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Fburger.png?alt=media&token=bccaa9db-7aa2-4114-9087-3498f49ebe11'),
+('Pizza','https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Fpizza.png?alt=media&token=e1e13860-6d78-43cb-b130-62d5f5691b1e'),
+('Khoai tây chiên','https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Ffried_potatoes.png?alt=media&token=5543b3b0-a689-46ec-ae8c-23026203adb1'),
+('Hotdog','https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/logo%2Fhotdog.png?alt=media&token=dc42acef-c38e-4e62-a3a7-2178adae0717'),
 
 INSERT INTO Food (id, name, price, image, FoodTypeId)
 VALUES
-('Gà rán sốt kem', 80000, 'ganransotkem.png', 1),
+('Gà giòn sốt kem', 40000, 'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_chicken%2Fga_gion_sot_kem.jpg?alt=media&token=5fc31336-ef7d-4560-9f18-184addd3eb99', 1),
+('Gà giòn 1 đùi', 35000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_chicken%2Fga_gion_1dui.jpg?alt=media&token=52128d66-bc28-4994-b812-43340c7aa21f',1),
+('Gà giòn 2 đùi', 65000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_chicken%2Fga_gion_2dui.jpg?alt=media&token=5f23a8a9-e7a9-45ce-96fc-eb3805f18476',1),
+('Gà Nudgets',45000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_chicken%2Fnugets.jpg?alt=media&token=c1568441-c0ab-4ed3-8421-69c366159c31',1),
+('Gà giòn tiêu tỏi',37000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_chicken%2Fga_gion_tieu_toi.jpg?alt=media&token=c0733740-f193-4d89-baed-cd639fc949ea',1),
+('Gà giòn sốt cay',37000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_chicken%2Fga_gion_sot_cay.jpg?alt=media&token=cfc1e1a3-e00c-4748-bc2a-8fb25eab15cb',1),
+('Burger gà',40000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/burger%2Fburger_ga.jpg?alt=media&token=e52b21bb-f452-4aee-84ea-34a277c5e792',4),
+('Burger x2 gà',55000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/burger%2Fburger_double_ga.jpg?alt=media&token=1fe4e986-1114-4323-b49a-aeef0143b311',4),
+('Burger tôm',45000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/burger%2Fburger_tom.jpg?alt=media&token=77c15165-343a-4bef-b6d5-931225edcd4b',4),
+('Burger bò',40000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/burger%2Fburger_bo.jpg?alt=media&token=e8aed572-d7a3-4ef1-a9e5-d5962479c359',4),
+('Burger x2 bò',40000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/burger%2Fburger_double_bo.jpg?alt=media&token=28d79b9d-279b-40ee-94a2-dc7187c46b1d',4),
+('Khoai tây chiên 3 loại sốt',50000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_potatoes%2Fkhoai_tay_chien_tripple_sot.jpg?alt=media&token=e2374379-fd1c-47c9-a350-65573d9d41ef',6),
+('Khoai tây chiên truyền thống', 35000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_potatoes%2Fkhoai_tay_chien_truyen_thong.jpg?alt=media&token=487c7294-cce6-48f9-9716-115c9bf26d96',6),
+('Khoai tây chiên sốt bò bằm',50000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/fried_potatoes%2Fkhoai_tay_sot_bo_bam.jpg?alt=media&token=0241d569-4d45-4b91-a001-a1d2afa36fa0',6),
+('Corndog',30000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/hotdog%2Fcorn_dog.jpg?alt=media&token=c00effee-ea78-4667-9b6a-57b4006a146d',7),
+('Hotdog phô mai',30000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/hotdog%2Fhotdog_pho_mai.jpg?alt=media&token=f0969e7b-adb9-4c79-b37b-6b9dd0d8233f',7),
+('Hotdog thịt xông khói',35000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/hotdog%2Fhotdog_thit_xong_khoi.jpg?alt=media&token=b20888ec-b8a6-4916-8d2e-4c598d17dded',7),
+('Hotdog truyền thống', 25000, 'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/hotdog%2Fhotdog_truyenthong.jpg?alt=media&token=8b3567f6-83ea-47eb-b95d-07c7796373e0',7),
+('Mỳ ý hải sản', 70000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pasta%2Fmy_y_hai_san.jpg?alt=media&token=21398670-a0ed-4653-bc7e-36f423beb8d3',2),
+('Mỳ ý sốt cà', 60000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pasta%2Fmy_y_sot_ca.jpg?alt=media&token=967d3a83-11e5-41d7-bd11-81420f851311',2),
+('Mỳ ý sốt cua',70000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pasta%2Fmy_y_sot_cua.jpg?alt=media&token=86463cce-7d8d-4248-8ca7-d5cfa62138f9',2),
+('Mỳ ý sốt kem',60000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pasta%2Fmy_y_sot_kem.jpg?alt=media&token=a7ecfac6-f7f7-4c56-83be-63b220cbcccc',2),
+('Mỳ ý sốt kem nấm',65000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pasta%2Fmy_y_sot_kem_nam.jpg?alt=media&token=5478a354-f270-454d-8a7c-3881ef54f18b',2),
+('Pizza hải sản', 250000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pizza%2Fpizza_haisan.jpg?alt=media&token=801d70a2-31c3-483b-8e67-4be4ff0743b7',5),
+('Pizza nấm',230000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pizza%2Fpizza_nam.jpg?alt=media&token=df58da03-3c3e-4eb7-ad74-56dd1a4e3dec',5),
+('Pizza phô mai',210000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pizza%2Fpizza_phomai.jpg?alt=media&token=8e8c4f06-86f9-4fde-8e35-bf8873e992fa',5),
+('Pizza xúc xích phô mai',245000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/pizza%2Fpizza_xucxich_phomai.jpg?alt=media&token=efc58775-564a-4c4f-a790-00c67c5baac4',5),
+('Coca',15000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/drinks%2Fcoca.jpg?alt=media&token=ae095da1-41c0-4eca-8a83-498eba07317f',3),
+('Fanta',15000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/drinks%2Ffanta.jpg?alt=media&token=384caa0d-fa80-4abd-945f-914c815ac1e0',3),
+('Sprite',15000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/drinks%2Fsprote.jpg?alt=media&token=abbcbca3-2814-4abc-93a6-f0051fe89742',3),
+('Trà đào',25000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/drinks%2Ftra_dao.jpg?alt=media&token=2c3f5f56-aa36-4260-bf62-02469e4e03bc',3),
+('Trà vải',25000,'https://firebasestorage.googleapis.com/v0/b/fast-food-ordering-syste-cdcdd.appspot.com/o/drinks%2Ftra_vai.jpg?alt=media&token=3ef7b57b-244d-4a4c-bfcf-407959692aa2',3),
+
+
+
+
+
