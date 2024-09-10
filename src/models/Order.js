@@ -34,12 +34,6 @@ const Order = sequelize.define('Order', {
     note:{
         type: DataTypes.STRING,
         allowNull: true,
-        validate: {
-            len: {
-                args: [1, 255],
-                msg: "Phone must be between 1 and 255 characters."
-            }
-        }
     },
 },
 {
