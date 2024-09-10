@@ -33,7 +33,7 @@ const Order = sequelize.define('Order', {
     },
     note:{
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
             len: {
                 args: [1, 255],
